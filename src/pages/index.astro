@@ -1,123 +1,351 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+
 const projects = [
   {
     id: '01',
     title: 'Virtual Rug AI',
-    desc: 'An AI-powered visualization and recommendation platform that helps customers preview rugs in their own rooms.',
+    desc: 'An AI-powered visualization system that helps customers preview rugs in real interior environments and connects AI workflows with e-commerce data.',
     stack: 'Python · FastAPI · Computer Vision · Docker · WooCommerce'
   },
   {
     id: '02',
-    title: 'RAG & Agentic AI Systems',
-    desc: 'LLM applications grounded in real knowledge, with retrieval, evaluation, workflow orchestration and production APIs.',
-    stack: 'LLMs · RAG · LangChain/LangGraph · FastAPI · Vector Search'
+    title: 'AROFRAG',
+    desc: 'Scientific computing software developed for automated molecular fragmentation and computational chemistry workflows.',
+    stack: 'C++ · Python · Quantum Chemistry · Scientific Computing'
   },
   {
     id: '03',
-    title: 'AROFRAG',
-    desc: 'Scientific computing software for automated molecular fragmentation and computational chemistry workflows.',
-    stack: 'Python · C++ · Scientific Computing · Quantum Chemistry'
+    title: 'LLM & Agentic AI',
+    desc: 'Applied work across RAG, LLM evaluation, agentic workflows and AI-powered applications, with a focus on reliable and practical systems.',
+    stack: 'LLMs · RAG · AI Agents · FastAPI · Vector Search'
+  }
+];
+
+const skills = [
+  'AI Engineering',
+  'Machine Learning',
+  'LLMs & RAG',
+  'AI Agents',
+  'Python',
+  'C++',
+  'FastAPI',
+  'Docker',
+  'Scientific Computing',
+  'Quantum Chemistry',
+  'Data Science',
+  'Linux'
+];
+
+const journey = [
+  {
+    year: '2013 — 2018',
+    title: 'Industrial Engineering',
+    place: 'Niroutrans',
+    desc: 'Engineering and technical work in the transformer industry.'
+  },
+  {
+    year: '2018 — 2023',
+    title: 'PhD · Quantum Chemistry',
+    place: 'University of Warsaw',
+    desc: 'Computational chemistry, molecular modeling and scientific software development.'
+  },
+  {
+    year: '2023 — 2025',
+    title: 'Scientific Computing',
+    place: 'Institute of Organic Chemistry, Polish Academy of Sciences',
+    desc: 'Computational research and development of scientific computing workflows.'
+  },
+  {
+    year: '2025 — Present',
+    title: 'AI / ML Engineering',
+    place: 'Intelligent Systems',
+    desc: 'Building practical AI systems across machine learning, LLMs, data and software engineering.'
   }
 ];
 ---
+
 <BaseLayout>
+  <!-- HERO -->
   <section class="hero section-shell">
     <div class="hero-copy">
-      <div class="availability"><span></span> Open to AI / ML opportunities</div>
-      <p class="eyebrow">Emran Masoumifeshani</p>
-      <h1>I build intelligent systems that turn complex problems into practical AI products.</h1>
-      <p class="hero-role">AI/ML Engineer · Data Scientist · PhD Scientist</p>
-      <p class="hero-intro">I combine scientific reasoning, machine learning and software engineering to build robust AI systems—from research prototypes to deployable products.</p>
-      <div class="hero-actions">
-        <a class="btn primary" href="/projects">Explore My Work</a>
-        <a class="btn secondary" href="/cv/emran-cv.pdf">Download CV</a>
+      <div class="availability">
+        <span></span>
+        Open to AI / ML opportunities
       </div>
+
+      <p class="eyebrow">Emran Masoumifeshani</p>
+
+      <h1>
+        From modeling molecules
+        <span>to building intelligent systems.</span>
+      </h1>
+
+      <p class="hero-role">
+        PhD Scientist · AI/ML Engineer · Data Scientist
+      </p>
+
+      <p class="hero-intro">
+        I combine scientific reasoning, machine learning and software engineering
+        to build intelligent systems for complex real-world problems.
+      </p>
+
+      <div class="hero-actions">
+        <a class="btn primary" href="/projects">
+          Explore My Work
+          <span>↗</span>
+        </a>
+
+        <a class="btn secondary" href="/cv/emran-cv.pdf">
+          Download CV
+        </a>
+      </div>
+
       <div class="social-row">
-        <a href="#" aria-label="GitHub">GitHub ↗</a>
-        <a href="#" aria-label="LinkedIn">LinkedIn ↗</a>
-        <a href="mailto:your-email@example.com">Email ↗</a>
+        <a href="https://github.com/emranmasoumi" target="_blank" rel="noreferrer">
+          GitHub ↗
+        </a>
+
+        <a href="https://www.linkedin.com/in/emran-masoumifeshani/" target="_blank" rel="noreferrer">
+          LinkedIn ↗
+        </a>
+
+        <a href="mailto:emran.masoumifeshani@gmail.com">
+          Email ↗
+        </a>
       </div>
     </div>
-    <div class="hero-visual" aria-label="Portrait placeholder">
+
+    <div class="hero-visual">
+      <div class="hero-orbit orbit-one"></div>
+      <div class="hero-orbit orbit-two"></div>
+
       <div class="glow glow-one"></div>
       <div class="glow glow-two"></div>
+
       <div class="portrait-card">
-        <img src="/images/profile_image.webp" alt="Portrait placeholder for Emran" />
+        <div class="portrait-frame">
+          <img
+            src="/images/profile_image.webp"
+            alt="Emran Masoumifeshani — PhD Scientist and AI/ML Engineer"
+          />
+        </div>
+
         <div class="portrait-label">
-          <strong>Warsaw, Poland</strong>
-          <span>Science → AI Engineering</span>
+          <div>
+            <strong>Warsaw, Poland</strong>
+            <span>Science → AI Engineering</span>
+          </div>
+          <span class="portrait-mark">EM</span>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- STATEMENT -->
   <section class="statement section-shell">
-    <p>From modeling molecules to building intelligent systems.</p>
+    <div class="statement-line"></div>
+
+    <p>
+      I build systems where
+      <span>science, data and AI</span>
+      meet practical engineering.
+    </p>
   </section>
 
+  <!-- SELECTED WORK -->
   <section class="section-shell section-block">
     <div class="section-heading">
-      <p class="eyebrow">Selected Work</p>
-      <h2>Projects with real engineering depth.</h2>
+      <div>
+        <p class="eyebrow">Selected Work</p>
+      </div>
+
+      <div>
+        <h2>Projects with real engineering depth.</h2>
+        <p class="section-lead">
+          From scientific software to AI-powered products, my work sits at
+          the intersection of research and production engineering.
+        </p>
+      </div>
     </div>
+
     <div class="project-grid">
       {projects.map((project) => (
         <article class="project-card">
-          <span class="project-number">{project.id}</span>
-          <div>
+          <div class="project-top">
+            <span class="project-number">{project.id}</span>
+            <span class="project-arrow">↗</span>
+          </div>
+
+          <div class="project-content">
             <h3>{project.title}</h3>
             <p>{project.desc}</p>
             <small>{project.stack}</small>
           </div>
-          <a href="/projects">View case study →</a>
+
+          <a href="/projects" class="project-link">
+            View project
+            <span>→</span>
+          </a>
         </article>
       ))}
     </div>
   </section>
 
-  <section class="section-shell section-block split-section">
-    <div>
-      <p class="eyebrow">My Journey</p>
-      <h2>A career built across science, engineering and AI.</h2>
+  <!-- JOURNEY -->
+  <section class="section-shell section-block journey-section">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">My Journey</p>
+      </div>
+
+      <div>
+        <h2>A career built across science, engineering and AI.</h2>
+      </div>
     </div>
+
     <div class="timeline">
-      <div><span>01</span><p>Industrial R&D</p></div>
-      <div><span>02</span><p>Computational Chemistry</p></div>
-      <div><span>03</span><p>Scientific Software</p></div>
-      <div><span>04</span><p>Machine Learning</p></div>
-      <div><span>05</span><p>Generative & Agentic AI</p></div>
-      <div><span>06</span><p>AI Engineering</p></div>
+      {journey.map((item, index) => (
+        <div class="timeline-item">
+          <div class="timeline-marker">
+            <span>{String(index + 1).padStart(2, '0')}</span>
+          </div>
+
+          <div class="timeline-year">{item.year}</div>
+
+          <div class="timeline-content">
+            <h3>{item.title}</h3>
+            <strong>{item.place}</strong>
+            <p>{item.desc}</p>
+          </div>
+        </div>
+      ))}
     </div>
   </section>
 
+  <!-- TECHNICAL FOCUS -->
   <section class="section-shell section-block">
     <div class="section-heading">
-      <p class="eyebrow">Technical Focus</p>
-      <h2>Where I spend most of my engineering time.</h2>
+      <div>
+        <p class="eyebrow">Technical Focus</p>
+      </div>
+
+      <div>
+        <h2>The tools and disciplines behind my work.</h2>
+      </div>
     </div>
+
     <div class="skill-grid">
-      <span>AI Engineering</span><span>LLM / RAG</span><span>Python / FastAPI</span><span>Machine Learning</span><span>Cloud & Docker</span><span>Scientific Computing</span>
+      {skills.map((skill, index) => (
+        <div class="skill-item">
+          <span>{String(index + 1).padStart(2, '0')}</span>
+          <strong>{skill}</strong>
+        </div>
+      ))}
     </div>
   </section>
 
+  <!-- RESEARCH -->
+  <section class="section-shell section-block research-highlight">
+    <div class="research-panel">
+      <div class="research-copy">
+        <p class="eyebrow">Research</p>
+
+        <h2>
+          A scientific foundation behind the engineering.
+        </h2>
+
+        <p>
+          My research background is in computational chemistry and scientific
+          computing, with a PhD focused on computational approaches to
+          molecular systems.
+        </p>
+
+        <a class="text-link" href="/research">
+          Explore my research
+          <span>→</span>
+        </a>
+      </div>
+
+      <div class="research-stats">
+        <div>
+          <strong>PhD</strong>
+          <span>Quantum Chemistry</span>
+        </div>
+
+        <div>
+          <strong>C++</strong>
+          <span>Scientific Software</span>
+        </div>
+
+        <div>
+          <strong>Python</strong>
+          <span>Computational Research</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WRITING -->
   <section class="section-shell section-block writing-section">
     <div class="section-heading">
-      <p class="eyebrow">Latest Writing</p>
-      <h2>Notes from building, learning and researching.</h2>
+      <div>
+        <p class="eyebrow">Writing</p>
+      </div>
+
+      <div>
+        <h2>Notes from building, learning and researching.</h2>
+      </div>
     </div>
+
     <div class="writing-grid">
-      <a href="/blog"><span>AI Engineering</span><h3>Building My First Production RAG System</h3><p>Architecture, retrieval, evaluation and deployment.</p></a>
-      <a href="/blog"><span>Career & Research</span><h3>From Computational Chemistry to AI Engineering</h3><p>How scientific thinking shaped the way I build AI systems.</p></a>
-      <a href="/blog"><span>Machine Learning</span><h3>RAG vs Fine-Tuning: How I Choose</h3><p>A practical framework for deciding between the two.</p></a>
+      <a href="/blog" class="writing-card">
+        <span>AI Engineering</span>
+        <h3>Building Reliable RAG Systems</h3>
+        <p>
+          Architecture, retrieval, evaluation and practical deployment.
+        </p>
+        <strong>Read more →</strong>
+      </a>
+
+      <a href="/blog" class="writing-card">
+        <span>Career & Research</span>
+        <h3>From Computational Chemistry to AI Engineering</h3>
+        <p>
+          How scientific thinking shaped the way I approach AI systems.
+        </p>
+        <strong>Read more →</strong>
+      </a>
+
+      <a href="/blog" class="writing-card">
+        <span>Machine Learning</span>
+        <h3>RAG vs Fine-Tuning</h3>
+        <p>
+          A practical framework for choosing the right approach.
+        </p>
+        <strong>Read more →</strong>
+      </a>
     </div>
   </section>
 
+  <!-- CONTACT -->
   <section class="section-shell contact-band">
     <div>
-      <p class="eyebrow">Let’s Build Something Useful</p>
-      <h2>Interested in AI, data or intelligent product development?</h2>
+      <p class="eyebrow">Let's Build Something Useful</p>
+
+      <h2>
+        Interested in AI, data or intelligent product development?
+      </h2>
+
+      <p>
+        I'm open to opportunities where scientific thinking and AI engineering
+        can create measurable impact.
+      </p>
     </div>
-    <a class="btn primary" href="/contact">Get in touch</a>
+
+    <a class="btn primary" href="/contact">
+      Get in touch
+      <span>→</span>
+    </a>
   </section>
 </BaseLayout>
