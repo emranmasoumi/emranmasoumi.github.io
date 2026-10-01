@@ -1,10 +1,254 @@
+
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+const timeline = [
+  {
+    period: '2013 — 2018',
+    role: 'Engineering',
+    organization: 'Niroutrans',
+    description:
+      'Engineering and technical work in the transformer industry, building a foundation in applied engineering and problem solving.'
+  },
+  {
+    period: '2018 — 2023',
+    role: 'PhD in Quantum Chemistry',
+    organization: 'University of Warsaw',
+    description:
+      'Computational chemistry research focused on molecular modeling, scientific computing and the development of computational methods.'
+  },
+  {
+    period: '2023 — 2025',
+    role: 'Scientific Computing',
+    organization: 'Institute of Organic Chemistry, Polish Academy of Sciences',
+    description:
+      'Computational research and scientific software development, combining chemistry, programming and numerical methods.'
+  },
+  {
+    period: '2025 — Present',
+    role: 'AI / ML Engineering',
+    organization: 'Intelligent Systems',
+    description:
+      'Building practical AI systems across machine learning, LLMs, data engineering and software development.'
+  }
+];
+
+const principles = [
+  {
+    number: '01',
+    title: 'Scientific Thinking',
+    description:
+      'I approach complex problems through structured reasoning, experimentation and evidence rather than relying on assumptions.'
+  },
+  {
+    number: '02',
+    title: 'Engineering Discipline',
+    description:
+      'I care about software that is maintainable, reproducible and useful beyond a prototype.'
+  },
+  {
+    number: '03',
+    title: 'Practical AI',
+    description:
+      'My focus is on turning modern AI capabilities into reliable systems that solve real problems.'
+  }
+];
+
+const technicalAreas = [
+  'Python',
+  'C++',
+  'Machine Learning',
+  'LLMs',
+  'RAG',
+  'AI Agents',
+  'FastAPI',
+  'Docker',
+  'Data Science',
+  'Scientific Computing',
+  'Quantum Chemistry',
+  'Linux'
+];
 ---
+
 <BaseLayout title="About — Emran Masoumifeshani">
-  <section class="section-shell inner-page">
-    <p class="eyebrow">About</p>
-    <h1>About</h1>
-    <p>This page is intentionally minimal in V1. We will populate it with final portfolio content next.</p>
+  <!-- INTRO -->
+  <section class="section-shell about-hero">
+    <div class="about-hero-copy">
+      <p class="eyebrow">About Me</p>
+
+      <h1>
+        From scientific
+        <span>models to intelligent systems.</span>
+      </h1>
+
+      <p class="about-lead">
+        I am a PhD scientist and AI/ML engineer with a background in
+        computational chemistry, scientific software and applied artificial
+        intelligence.
+      </p>
+    </div>
+
+    <div class="about-intro-side">
+      <span class="about-location">Warsaw, Poland</span>
+
+      <p>
+        My career has moved across engineering, scientific research and
+        software development. Today, I combine these experiences to build
+        practical AI systems for complex real-world problems.
+      </p>
+    </div>
+  </section>
+
+  <!-- STORY -->
+  <section class="section-shell section-block about-story">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">My Story</p>
+      </div>
+
+      <div>
+        <h2>
+          A scientific background shaped the way I build technology.
+        </h2>
+
+        <div class="about-text">
+          <p>
+            I started my professional career in engineering, working on
+            technical problems in the transformer industry. This gave me an
+            early appreciation for systems thinking, precision and
+            engineering constraints.
+          </p>
+
+          <p>
+            I then moved into computational science and completed a PhD in
+            quantum chemistry at the University of Warsaw. My research
+            involved computational modeling, scientific programming and
+            developing methods for understanding complex molecular systems.
+          </p>
+
+          <p>
+            After my PhD, I continued working in scientific computing at the
+            Institute of Organic Chemistry of the Polish Academy of Sciences.
+            During this period, software became increasingly central to my
+            work.
+          </p>
+
+          <p>
+            Today, I am applying that scientific and engineering background to
+            artificial intelligence. I work with machine learning, LLMs, RAG,
+            AI agents and backend systems, with an emphasis on building
+            solutions that are useful, reliable and deployable.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRINCIPLES -->
+  <section class="section-shell section-block">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">How I Work</p>
+      </div>
+
+      <div>
+        <h2>Three ideas guide my approach.</h2>
+      </div>
+    </div>
+
+    <div class="principles-grid">
+      {principles.map((item) => (
+        <article class="principle-card">
+          <span>{item.number}</span>
+
+          <h3>{item.title}</h3>
+
+          <p>{item.description}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section class="section-shell section-block">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">Experience</p>
+      </div>
+
+      <div>
+        <h2>A career across engineering, science and AI.</h2>
+      </div>
+    </div>
+
+    <div class="about-timeline">
+      {timeline.map((item, index) => (
+        <article class="about-timeline-item">
+          <div class="about-timeline-index">
+            {String(index + 1).padStart(2, '0')}
+          </div>
+
+          <div class="about-timeline-period">
+            {item.period}
+          </div>
+
+          <div class="about-timeline-content">
+            <h3>{item.role}</h3>
+
+            <strong>{item.organization}</strong>
+
+            <p>{item.description}</p>
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <!-- TECHNICAL -->
+  <section class="section-shell section-block about-tech">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">Technical Focus</p>
+      </div>
+
+      <div>
+        <h2>The technologies I use to turn ideas into systems.</h2>
+      </div>
+    </div>
+
+    <div class="about-tech-grid">
+      {technicalAreas.map((area, index) => (
+        <div class="about-tech-item">
+          <span>{String(index + 1).padStart(2, '0')}</span>
+          <strong>{area}</strong>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section-shell contact-band about-cta">
+    <div>
+      <p class="eyebrow">Next Step</p>
+
+      <h2>
+        Explore the work behind the journey.
+      </h2>
+
+      <p>
+        Take a look at my projects, research and technical work.
+      </p>
+    </div>
+
+    <div class="about-cta-actions">
+      <a class="btn primary" href="/projects">
+        Explore Projects
+        <span>→</span>
+      </a>
+
+      <a class="btn secondary" href="/research">
+        View Research
+      </a>
+    </div>
   </section>
 </BaseLayout>
