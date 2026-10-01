@@ -1,0 +1,39 @@
+---
+import '../styles/global.css';
+const {
+  title = 'Emran Masoumifeshani — AI/ML Engineer',
+  description = 'AI/ML Engineer, Data Scientist and PhD Scientist building practical intelligent systems.'
+} = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#090d12" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/" aria-label="Home">EM</a>
+      <nav>
+        <a href="/about">About</a>
+        <a href="/projects">Projects</a>
+        <a href="/research">Research</a>
+        <a href="/blog">Blog</a>
+        <a class="nav-cta" href="/contact">Contact</a>
+      </nav>
+    </header>
+    <main>
+      <slot />
+    </main>
+    <footer class="site-footer">
+      <div>
+        <strong>Emran Masoumifeshani</strong>
+        <p>AI/ML Engineer · Data Scientist · PhD Scientist</p>
+      </div>
+      <p>Built with Astro. Designed for clarity, speed and thoughtful engineering.</p>
+    </footer>
+  </body>
+</html>

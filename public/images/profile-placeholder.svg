@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" role="img" aria-label="Profile placeholder">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#172033"/>
+      <stop offset="1" stop-color="#0b111b"/>
+    </linearGradient>
+    <radialGradient id="g1"><stop offset="0" stop-color="#38bdf8" stop-opacity=".35"/><stop offset="1" stop-color="#38bdf8" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect width="800" height="1000" fill="url(#bg)"/>
+  <circle cx="560" cy="250" r="260" fill="url(#g1)"/>
+  <circle cx="400" cy="365" r="150" fill="#202b3d"/>
+  <path d="M180 890c25-210 140-330 220-330s195 120 220 330" fill="#202b3d"/>
+  <text x="400" y="930" fill="#94a3b8" text-anchor="middle" font-family="Arial, sans-serif" font-size="30">Replace with your portrait</text>
+</svg>
