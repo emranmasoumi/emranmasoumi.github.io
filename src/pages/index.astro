@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { blogPosts } from '../data/blog';
 
 const projects = [
   {
@@ -307,35 +308,29 @@ const journey = [
       </div>
     </div>
 
-    <div class="writing-grid">
-      <a href="/blog" class="writing-card">
-        <span>AI Engineering</span>
-        <h3>Building Reliable RAG Systems</h3>
-        <p>
-          Architecture, retrieval, evaluation and practical deployment.
-        </p>
-        <strong>Read more →</strong>
-      </a>
 
-      <a href="/blog" class="writing-card">
-        <span>Career & Research</span>
-        <h3>From Computational Chemistry to AI Engineering</h3>
-        <p>
-          How scientific thinking shaped the way I approach AI systems.
-        </p>
-        <strong>Read more →</strong>
-      </a>
+<div class="writing-grid">
+  {blogPosts
+    .slice()
+    .sort(
+      (a, b) =>
+        new Date(b.date).getTime() - new Date(a.date).getTime()
+    )
+    .slice(0, 3)
+    .map((post) => (
+      <a href={`/blog/${post.slug}`} class="writing-card">
+        <span>{post.category}</span>
 
-      <a href="/blog" class="writing-card">
-        <span>Machine Learning</span>
-        <h3>RAG vs Fine-Tuning</h3>
-        <p>
-          A practical framework for choosing the right approach.
-        </p>
+        <h3>{post.title}</h3>
+
+        <p>{post.excerpt}</p>
+
         <strong>Read more →</strong>
       </a>
-    </div>
-  </section>
+    ))}
+</div>
+
+
 
   <!-- CONTACT -->
   <section class="section-shell contact-band">
