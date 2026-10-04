@@ -1,10 +1,148 @@
 ---
+
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
+
 <BaseLayout title="Contact — Emran Masoumifeshani">
-  <section class="section-shell inner-page">
+  <section class="section-shell inner-page contact-page">
     <p class="eyebrow">Contact</p>
-    <h1>Contact</h1>
-    <p>This page is intentionally minimal in V1. We will populate it with final portfolio content next.</p>
+
+<h1>Let’s Connect</h1>
+
+<p class="contact-intro">
+  I’m open to opportunities and collaborations in Data Science, AI/ML,
+  computational science, and scientific computing. If you would like to
+  discuss a role, research project, or potential collaboration, feel free
+  to get in touch.
+</p>
+
+<div class="contact-grid">
+  <div class="contact-card">
+    <span class="contact-label">Email</span>
+    <a href="mailto:emran.masoumi@gmail.com">
+      YOUR_EMAIL@example.com
+    </a>
+  </div>
+
+  <div class="contact-card">
+    <span class="contact-label">LinkedIn</span>
+    <a
+      href="https://www.linkedin.com/in/emranmasoumifeshani/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      LinkedIn Profile
+    </a>
+  </div>
+
+  <div class="contact-card">
+    <span class="contact-label">GitHub</span>
+    <a
+      href="https://github.com/emranmasoumi"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      github.com/emranmasoumi
+    </a>
+  </div>
+
+  <div class="contact-card">
+    <span class="contact-label">Location</span>
+    <p>Warsaw, Poland</p>
+  </div>
+</div>
+
+<div class="contact-focus">
+  <p class="contact-label">Currently open to</p>
+
+  <div class="focus-list">
+    <span>Data Science</span>
+    <span>AI / Machine Learning</span>
+    <span>Scientific Computing</span>
+    <span>Computational Research</span>
+  </div>
+</div>
+```
+
   </section>
 </BaseLayout>
+
+<style>
+  .contact-page {
+    max-width: 900px;
+  }
+
+  .contact-intro {
+    max-width: 720px;
+    font-size: 1.08rem;
+    line-height: 1.8;
+    margin-top: 1.25rem;
+    margin-bottom: 3rem;
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  .contact-card {
+    padding: 1.5rem;
+    border: 1px solid var(--border-color, rgba(255, 255, 255, 0.12));
+    border-radius: 14px;
+  }
+
+  .contact-label {
+    display: block;
+    margin-bottom: 0.55rem;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    opacity: 0.65;
+  }
+
+  .contact-card a {
+    color: inherit;
+    text-decoration: none;
+    word-break: break-word;
+  }
+
+  .contact-card a:hover {
+    text-decoration: underline;
+  }
+
+  .contact-card p {
+    margin: 0;
+  }
+
+  .contact-focus {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-color, rgba(255, 255, 255, 0.12));
+  }
+
+  .focus-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+  }
+
+  .focus-list span {
+    padding: 0.55rem 0.85rem;
+    border: 1px solid var(--border-color, rgba(255, 255, 255, 0.12));
+    border-radius: 999px;
+    font-size: 0.9rem;
+  }
+
+  @media (max-width: 700px) {
+    .contact-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .contact-intro {
+      font-size: 1rem;
+    }
+  }
+</style>
+
