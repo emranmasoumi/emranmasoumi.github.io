@@ -4,21 +4,31 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 const projects = [
   {
     id: '01',
-    title: 'Virtual Rug AI',
-    desc: 'An AI-powered visualization system that helps customers preview rugs in real interior environments and connects AI workflows with e-commerce data.',
-    stack: 'Python · FastAPI · Computer Vision · Docker · WooCommerce'
+    title: 'AI-Powered Product Recommendation System',
+    desc: 'An AI-powered e-commerce system combining room visualization, image processing and product recommendation workflows.',
+    stack: 'Python · FastAPI · AI / Computer Vision · Docker',
+    slug: 'ai-product-recommendation'
   },
   {
     id: '02',
-    title: 'AROFRAG',
-    desc: 'Scientific computing software developed for automated molecular fragmentation and computational chemistry workflows.',
-    stack: 'C++ · Python · Quantum Chemistry · Scientific Computing'
+    title: 'Customer Segmentation & E-Commerce Analytics',
+    desc: 'An end-to-end machine learning pipeline that transforms transactional data into customer segments and business insights.',
+    stack: 'Python · Pandas · scikit-learn · Machine Learning',
+    slug: 'customer-segmentation'
   },
   {
     id: '03',
-    title: 'LLM & Agentic AI',
-    desc: 'Applied work across RAG, LLM evaluation, agentic workflows and AI-powered applications, with a focus on reliable and practical systems.',
-    stack: 'LLMs · RAG · AI Agents · FastAPI · Vector Search'
+    title: 'RAG Document Assistant',
+    desc: 'A modular Retrieval-Augmented Generation application for document question answering with LLMs.',
+    stack: 'Python · RAG · LLMs · LangChain · FastAPI',
+    slug: 'rag-document-assistant'
+  },
+  {
+    id: '04',
+    title: 'Scientific Computing & Automation Software',
+    desc: 'AROFRAG automates molecular fragmentation and computational workflows for quantum chemistry research.',
+    stack: 'Python · C++ · Scientific Computing · Automation',
+    slug: 'arofrag'
   }
 ];
 
@@ -164,7 +174,6 @@ const journey = [
         <h2>Projects with real engineering depth.</h2>
         <p class="section-lead">
           From scientific software to AI-powered products, my work sits at
-          the intersection of research and production engineering.
         </p>
       </div>
     </div>
@@ -183,7 +192,7 @@ const journey = [
             <small>{project.stack}</small>
           </div>
 
-          <a href="/projects" class="project-link">
+          <a href={`/projects/${project.slug}`} class="project-link">
             View project
             <span>→</span>
           </a>
