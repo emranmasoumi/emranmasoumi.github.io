@@ -1,0 +1,197 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { blogPosts } from '../../data/blog';
+
+export function getStaticPaths() {
+  return blogPosts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post }
+  }));
+}
+
+const { post } = Astro.props;
+---
+
+<BaseLayout title={`${post.title} — Emran Masoumifeshani`}>
+  <article class="blog-article">
+    <section class="section-shell blog-hero">
+      <a class="back-link" href="/blog">← All articles</a>
+
+      <div class="blog-hero-meta">
+        <span>{post.number}</span>
+        <span>{post.category}</span>
+        <span>{post.readTime}</span>
+      </div>
+
+      <h1>{post.title}</h1>
+
+      <p class="blog-date">
+        {new Date(post.date).toLocaleDateString('en-GB', {
+          day: '2-digit',
+          month: 'long',
+          year: 'numeric'
+        })}
+      </p>
+
+      <p class="blog-introduction">
+        {post.content.introduction}
+      </p>
+    </section>
+
+    <section class="section-shell blog-body">
+      <aside class="blog-sidebar">
+        <span class="blog-label">Topics</span>
+
+        <div class="blog-sidebar-tags">
+          {post.tags.map((tag) => (
+            <span>{tag}</span>
+          ))}
+        </div>
+      </aside>
+
+      <div class="blog-content">
+        {post.content.sections.map((section) => (
+          <section>
+            <p class="eyebrow">{section.heading}</p>
+
+            <h2>{section.heading}</h2>
+
+            {section.paragraphs.map((paragraph) => (
+              <p>{paragraph}</p>
+            ))}
+
+            {section.items && (
+              <ul>
+                {section.items.map((item) => (
+                  <li>{item}</li>
+                ))}
+              </ul>
+            )}
+          </section>
+        ))}
+      </div>
+    </section>
+
+    <section class="section-shell blog-navigation">
+      <a href="/blog">← Back to all articles</a>
+    </section>
+  </article>
+</BaseLayout>
+
+<style>
+  .blog-hero {
+    max-width: 1000px;
+  }
+
+  .back-link {
+    display: inline-block;
+    margin-bottom: 2rem;
+  }
+
+  .blog-hero-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    opacity: 0.65;
+  }
+
+  .blog-hero h1 {
+    max-width: 900px;
+    margin: 0;
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    line-height: 1.05;
+  }
+
+  .blog-date {
+    margin-top: 1rem;
+    opacity: 0.55;
+  }
+
+  .blog-introduction {
+    max-width: 760px;
+    margin-top: 2rem;
+    font-size: 1.2rem;
+    line-height: 1.8;
+  }
+
+  .blog-body {
+    display: grid;
+    grid-template-columns: 220px minmax(0, 720px);
+    gap: 4rem;
+    margin-top: 4rem;
+  }
+
+  .blog-sidebar {
+    position: sticky;
+    top: 2rem;
+    align-self: start;
+  }
+
+  .blog-label {
+    display: block;
+    margin-bottom: 1rem;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    opacity: 0.65;
+  }
+
+  .blog-sidebar-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .blog-sidebar-tags span {
+    padding: 0.4rem 0.65rem;
+    border: 1px solid var(--border-color, rgba(255, 255, 255, 0.12));
+    border-radius: 999px;
+    font-size: 0.78rem;
+  }
+
+  .blog-content section {
+    margin-bottom: 4rem;
+  }
+
+  .blog-content h2 {
+    margin: 0 0 1.25rem;
+    font-size: 1.8rem;
+  }
+
+  .blog-content p {
+    margin: 0 0 1.25rem;
+    line-height: 1.85;
+  }
+
+  .blog-content ul {
+    padding-left: 1.25rem;
+    line-height: 1.9;
+  }
+
+  .blog-content li {
+    margin-bottom: 0.5rem;
+  }
+
+  .blog-navigation {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    padding-bottom: 4rem;
+    border-top: 1px solid var(--border-color, rgba(255, 255, 255, 0.12));
+  }
+
+  @media (max-width: 800px) {
+    .blog-body {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .blog-sidebar {
+      position: static;
+    }
+  }
+</style>
