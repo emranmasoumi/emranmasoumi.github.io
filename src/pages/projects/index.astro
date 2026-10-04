@@ -1,0 +1,74 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { projects } from '../../data/projects';
+
+---
+
+<BaseLayout title="Projects — Emran Masoumifeshani">
+  <section class="section-shell projects-hero">
+    <div>
+      <p class="eyebrow">Selected Work</p>
+      <h1>
+        Projects where
+        <span>science meets software.</span>
+      </h1>
+    </div>
+
+    <div class="projects-hero-side">
+      <p>
+        A selection of work across AI engineering, machine learning,
+        LLM applications and scientific computing.
+      </p>
+      <span>04 PROJECTS · AI · ML · LLM · SCIENTIFIC COMPUTING</span>
+    </div>
+  </section>
+
+  <section class="section-shell projects-list">
+    {projects.map((project) => (
+      <article class="project-feature">
+        <a href={`/projects/${project.slug}`} class="project-image-link" aria-label={`View ${project.title}`}>
+          <div class="project-image-wrap">
+            <img src={project.image} alt={project.title} loading="lazy" />
+            <span class="project-image-arrow">↗</span>
+          </div>
+        </a>
+
+        <div class="project-feature-copy">
+          <div class="project-feature-meta">
+            <span>{project.number}</span>
+            <span>{project.category}</span>
+          </div>
+
+          <h2>{project.title}</h2>
+
+          <p class="project-role">{project.role}</p>
+
+          <p class="project-feature-description">{project.summary}</p>
+
+          <div class="project-tags">
+            {project.technologies.map((item) => <span>{item}</span>)}
+          </div>
+
+          <a class="text-link" href={`/projects/${project.slug}`}>
+            View case study <span>→</span>
+          </a>
+        </div>
+      </article>
+    ))}
+  </section>
+
+  <section class="section-shell contact-band projects-cta">
+    <div>
+      <p class="eyebrow">Let's Work Together</p>
+      <h2>Have a complex problem worth solving?</h2>
+      <p>
+        I'm interested in AI, data and intelligent software systems that create
+        measurable value.
+      </p>
+    </div>
+
+    <a class="btn primary" href="/contact">
+      Get in touch <span>→</span>
+    </a>
+  </section>
+</BaseLayout>
